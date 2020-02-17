@@ -1,0 +1,22 @@
+type Event {
+    id: ID
+    title: String
+    url: String
+    people: [Person]
+}
+
+type Person {
+    id: ID
+    firstName: String
+    lastName: String
+    email: String
+}
+
+type Query {
+    allEvents: [Event]
+    event(id: ID!): Event
+}
+
+type Mutation {
+    renameEvent(id: ID!, title: String!): Event
+}
